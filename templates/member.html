@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar header b a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        #member {
+            background-color: grey;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            margin: 40px 10px 10px 10px;
+            color: white;
+            font-weight: bold;
+            font-family: monospace;
+            background: linear-gradient(to right, #67d4e4, black);
+        }
+
+        .three_3 {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .three_3 img {
+            max-width: 320px;
+            float: left;
+            margin: 40px 20px 20px 20px;
+            border: solid 2px black;
+            border-radius: 10px;
+        }
+
+        .three_3 h3 {
+            font-size: 35px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .three_3 p {
+            font-size: 25px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .four_4 {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .four_4 img {
+            max-width: 320px;
+            float: right;
+            margin: 40px 20px 20px 20px;
+            border: solid 2px black;
+            border-radius: 10px;
+        }
+
+        .four_4 h3 {
+            text-align: right;
+            font-size: 35px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .four_4 p {
+            font-size: 25px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, black, #67f4e4);
+        }
+
+        /* existing styles */
+
+        .animated-image {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .three_3 h3,
+        .three_3 p {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .three_3:hover.animated-image {
+            transform: scale(1.05);
+        }
+
+        .three_3:hover h3,
+        .three_3:hover p {
+            opacity: 2;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class = 'navbar'>
+        <header>
+            <b><a href="/" title="Go to home page" style = "color: white;">HOME</a></b><span> | </span>
+            <b><a href="/members" style = "color: white;">MEMBERS</a></b>
+            </header>
+        </div>
+    <br>
+
+    <div>
+        <p id="member">Member of the project</p>
+    </div>
+
+    <div class='three_3'>
+        <img src="{{ url_for('static', filename = 'pin6.jpeg')}}" class="animated-image">
+        <h3>KIRTAN DHOTRA</h3>
+        <p> CSE Cyber 3rd sem<br>
+            Enrollment no: 22BECCS19<br>
+            Department: CSE<br>
+            Batch: 2022-26<br>
+            BTech CSE(cyber security)
+        </p>
+    </div>
+</body>
+
+</html>

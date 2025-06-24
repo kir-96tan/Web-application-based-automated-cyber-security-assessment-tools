@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List in Table</title>
+    <style>
+        body{
+            background: black;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height:30px;
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .navbar header b a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: monospace;
+        }
+
+        .container {
+            margin: 20px 20px 20px 20px;
+            padding-top: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #67f4e4;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class = 'navbar'>
+        <header>
+            <b><a href="/" title="Go to home page" style = "color: white;">HOME</a></b><span> | </span>
+            <b><a href="/members" style = "color: white;">MEMBERS</a></b>
+            </header>
+        </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Item</th>
+            </tr>
+            {% for item in lis %}
+                <tr>
+                    <td>{{ item }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

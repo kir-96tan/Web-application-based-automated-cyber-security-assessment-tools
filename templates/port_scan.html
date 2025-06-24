@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Form</title>
+    <style>
+        body {
+            background: linear-gradient(#67d4e4,black);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navbar header b a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+
+        .container {
+            text-align: center;
+            background:transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+
+        .container #sub{
+            background-color: black;
+        }
+
+        .container #sub:hover{
+            background-color: #67d4f4;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'navbar'>
+        <header>
+            <b><a href="/" title="Go to home page" style = "color: white;">HOME</a></b><span> | </span>
+            <b><a href="/members" style = "color: white;">MEMBERS</a></b>
+            </header>
+        </div>
+
+
+    <div class="container">
+        <h1>Enter Scan Details</h1>
+        <form action="/Pscan" method="post">
+            <input type="text" name="ip_address" placeholder="Enter IP Address" required><br>
+            <select name="scan_type" required>
+                <option value="" disabled selected>Select Scan Type</option>
+                <option value="SYN_ACK">SYN ACK Scan</option>
+                <option value="UDP">UDP Scan</option>
+                <option value="TCP">TCP Scan</option>
+            </select><br>
+            <input id = "sub" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
